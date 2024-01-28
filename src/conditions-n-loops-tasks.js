@@ -94,8 +94,13 @@ function canQueenCaptureKing(/* queen, king */) {
  *  2, 2, 5   => false
  *  3, 0, 3   => false
  */
-function isIsoscelesTriangle(/* a, b, c */) {
-  throw new Error('Not implemented');
+function isIsoscelesTriangle(a, b, c) {
+  if (a + b > c && b + c > a && a + c > b) {
+    if (a === b || b === c || c === a) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
@@ -131,8 +136,57 @@ function convertToRomanNumerals(/* num */) {
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let text = '';
+  for (let i = 0; i < numberStr.length; i += 1) {
+    switch (numberStr[i]) {
+      case '1':
+        text += 'one';
+        break;
+      case '2':
+        text += 'two';
+        break;
+      case '3':
+        text += 'three';
+        break;
+      case '4':
+        text += 'four';
+        break;
+      case '5':
+        text += 'five';
+        break;
+      case '6':
+        text += 'six';
+        break;
+      case '7':
+        text += 'seven';
+        break;
+      case '8':
+        text += 'eight';
+        break;
+      case '9':
+        text += 'nine';
+        break;
+      case '0':
+        text += 'zero';
+        break;
+      case '-':
+        text += 'minus';
+        break;
+      case '.':
+        text += 'point';
+        break;
+      case ',':
+        text += 'point';
+        break;
+      default:
+        break;
+    }
+    if (i !== numberStr.length - 1) {
+      text += ' ';
+    }
+  }
+  return text;
 }
 
 /**
