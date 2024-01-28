@@ -201,8 +201,17 @@ function convertNumberToString(numberStr) {
  *  '0123210'   => true
  *  'qweqwe'    => false
  */
-function isPalindrome(/* str */) {
-  throw new Error('Not implemented');
+function isPalindrome(str) {
+  let j = 0;
+  for (let i = str.length - 1; i >= 0; i -= 1) {
+    if (str[i] === str[j]) {
+      j += 1;
+    }
+  }
+  if (j === str.length) {
+    return true;
+  }
+  return false;
 }
 
 /**
@@ -219,8 +228,17 @@ function isPalindrome(/* str */) {
  *  'qwerty', 'Q'     => -1
  *  'qwerty', 'p'     => -1
  */
-function getIndexOf(/* str, letter */) {
-  throw new Error('Not implemented');
+function getIndexOf(str, letter) {
+  let index = 0;
+  for (let i = 0; i < str.length; i += 1) {
+    if (str[i] === letter) {
+      index = i;
+      break;
+    } else {
+      index = -1;
+    }
+  }
+  return index;
 }
 
 /**
@@ -238,8 +256,15 @@ function getIndexOf(/* str, letter */) {
  *  12345, 0    => false
  *  12345, 6    => false
  */
-function isContainNumber(/* num, digit */) {
-  throw new Error('Not implemented');
+function isContainNumber(num, digit) {
+  const numbers = `${num}`;
+  const d = `${digit}`;
+  for (let i = 0; i < numbers.length; i += 1) {
+    if (numbers[i] === d) {
+      return true;
+    }
+  }
+  return false;
 }
 
 /**
